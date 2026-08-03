@@ -1,0 +1,151 @@
+import React from "react";
+import { CalendarDays, CloudSun } from "lucide-react";
+
+interface TopBarLeftProps {
+  formattedDate: string;
+  formattedTime: string;
+  temperature: number;
+  city: string;
+}
+
+const TopBarLeft: React.FC<TopBarLeftProps> = ({
+  formattedDate,
+  formattedTime,
+  temperature,
+  city,
+}) => {
+  return (
+    <div
+      className="
+        flex
+        items-center
+        shrink-0
+      "
+    >
+      {/* ======================================================
+          AUTHORITY
+      ====================================================== */}
+
+      <div
+        className="
+          flex
+          flex-col
+          justify-center
+          whitespace-nowrap
+          pr-10
+        "
+      >
+        <span
+          className="
+            text-[13px]
+            font-medium
+            tracking-[0.08em]
+            uppercase
+            text-white
+            leading-none
+          "
+        >
+          Kanpur Development Authority
+        </span>
+
+        <div
+          className="
+            mt-2
+            flex
+            items-center
+            gap-2
+          "
+        >
+          <span className="h-2 w-2 rounded-full bg-emerald-500" />
+
+          <span
+            className="
+              text-[12px]
+              text-emerald-400
+            "
+          >
+            System Healthy
+          </span>
+        </div>
+      </div>
+
+      {/* ======================================================
+          DATE
+      ====================================================== */}
+
+      <div
+        className="
+          flex
+          items-center
+          pr-8
+        "
+      >
+        <CalendarDays
+          size={18}
+          className="mr-3 text-cyan-400"
+        />
+
+        <div className="leading-tight">
+          <div
+            className="
+              whitespace-nowrap
+              text-[14px]
+              text-white
+            "
+          >
+            {formattedDate}
+          </div>
+
+          <div
+            className="
+              mt-1
+              text-[12px]
+              text-slate-400
+            "
+          >
+            {formattedTime}
+          </div>
+        </div>
+      </div>
+
+      {/* ======================================================
+          WEATHER
+      ====================================================== */}
+
+      <div
+        className="
+          flex
+          items-center
+        "
+      >
+        <CloudSun
+          size={19}
+          className="mr-3 text-amber-400"
+        />
+
+        <div className="leading-tight">
+          <div
+            className="
+              text-[14px]
+              text-white
+            "
+          >
+            {temperature}°C
+          </div>
+
+          <div
+            className="
+              mt-1
+              text-[12px]
+              text-slate-400
+            "
+          >
+            {city}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default TopBarLeft;
