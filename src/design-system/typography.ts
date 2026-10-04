@@ -11,16 +11,17 @@ export const typography = {
     mono: "'JetBrains Mono', monospace",
   },
 
-  fontSize: {
-    xs: "12px",
-    sm: "14px",
-    md: "16px",
-    lg: "18px",
-    xl: "20px",
-    "2xl": "24px",
-    "3xl": "30px",
-    "4xl": "36px",
-    "5xl": "48px",
+  
+    compact: {
+    xs: "10px",
+    sm: "11px",
+    md: "12px",
+    lg: "14px",
+    xl: "16px",
+    "2xl": "18px",
+    "3xl": "22px",
+    "4xl": "28px",
+    "5xl": "36px",
   },
 
   fontWeight: {

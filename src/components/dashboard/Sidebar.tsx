@@ -13,10 +13,11 @@ import {
   ShieldCheck,
   ChevronLeft,
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 interface MenuItem {
   title: string;
-  icon: React.ElementType;
+  icon: LucideIcon;
   active?: boolean;
 }
 
@@ -73,22 +74,24 @@ const Sidebar: React.FC = () => {
     <aside
       className="
         flex
-        h-screen
-        w-[220px]
+        h-full
+        w-full
         flex-col
-        border-r
-        border-slate-800/70
-        bg-[#060B14]
+        bg-red-600
+        overflow-hidden
+        outline
+        outline-2
+        outline-green-500
       "
     >
-	      {/* ======================================================
+      {/* ======================================================
           LOGO
       ======================================================= */}
 
       <div
         className="
           flex
-          h-[88px]
+          h-[82px]
           items-center
           justify-center
           border-b
@@ -99,7 +102,7 @@ const Sidebar: React.FC = () => {
         <img
           src="/logos/daip-logo.png"
           alt="DAIP"
-          className="h-[62px] w-auto object-contain"
+          className="h-[58px] w-auto object-contain"
         />
       </div>
 
@@ -110,9 +113,14 @@ const Sidebar: React.FC = () => {
       <nav
         className="
           flex-1
-          overflow-hidden
+          min-h-0
+          overflow-y-auto
+          overflow-x-hidden
           px-3
-          py-3
+          py-1
+          outline
+          outline-2
+          outline-blue-500
         "
       >
         <div className="space-y-1">
@@ -126,10 +134,10 @@ const Sidebar: React.FC = () => {
                   flex
                   w-full
                   items-center
-                  gap-3
+                  gap-2.5
                   rounded-xl
                   px-3
-                  py-2
+                  py-1.5
                   text-left
                   transition-all
                   ${
@@ -140,11 +148,11 @@ const Sidebar: React.FC = () => {
                 `}
               >
                 <Icon
-                  size={18}
+                  size={17}
                   className="shrink-0"
                 />
 
-                <span className="text-[15px] font-medium leading-5">
+                <span className="text-[14px] font-medium leading-5">
                   {item.title}
                 </span>
               </button>
@@ -152,12 +160,12 @@ const Sidebar: React.FC = () => {
           })}
         </div>
       </nav>
-	        {/* ======================================================
+
+      {/* ======================================================
           FOOTER
       ======================================================= */}
 
-      <div className="border-t border-slate-800/70 p-3">
-
+      <div className="border-t border-slate-800/70 px-3 py-1.5">
         <button
           className="
             flex
@@ -186,9 +194,8 @@ const Sidebar: React.FC = () => {
         <p className="mt-3 text-center text-[11px] text-slate-500">
           Enterprise v2.0
         </p>
-
       </div>
-	      </aside>
+    </aside>
   );
 };
 

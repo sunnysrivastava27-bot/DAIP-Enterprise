@@ -20,10 +20,10 @@ export const topBarTokens = {
    * ====================================================== */
 
   header: {
-    height: "h-[90px]",
+    height: "h-[60px]",
 
     // Increased for better breathing space
-    paddingX: "px-8",
+    paddingX: "px-4",
 
     background: "bg-[#060B14]",
 
@@ -39,18 +39,18 @@ export const topBarTokens = {
 
   layout: {
     // Better spacing on left information block
-    leftGap: "gap-8",
+    leftGap: "gap-4",
 
-    leftSectionGap: "gap-8",
+    leftSectionGap: "gap-4",
 
     // Date ↔ Weather spacing
-    inlineGap: "gap-4",
+    inlineGap: "gap-2",
 
     // Gives search bar more breathing room
-    centerPadding: "px-10",
+    centerPadding: "px-4",
 
     // Notification ↔ AI ↔ Profile spacing
-    rightGap: "gap-5",
+    rightGap: "gap-3",
   },
 
   /* ========================================================
@@ -59,42 +59,29 @@ export const topBarTokens = {
 
   search: {
     fullWidth: "w-full",
-
-    // Slightly wider search field
     width: "max-w-[470px]",
-
-    // Better responsive behaviour
     minWidth: "min-w-0",
 
-    height: "h-12",
+    height: "h-10",
 
     radius: "rounded-2xl",
-
     paddingX: "px-4",
-
     border: "border border-slate-700/70",
-
     background: "bg-[#0B1220]",
-
     iconGap: "gap-3",
-
     shortcutGap: "gap-1",
-
     shortcutRadius: "rounded-lg",
-
     shortcutPadding: "px-2.5 py-1",
-
     shortcutBackground: "bg-[#111827]",
-
     shortcutBorder: "border border-slate-700",
-  },
+},
 
   /* ========================================================
    * BUTTONS
    * ====================================================== */
 
   button: {
-    size: "h-12 w-12",
+    size: "h-10 w-10",
 
     radius: "rounded-xl",
   },
@@ -104,22 +91,17 @@ export const topBarTokens = {
    * ====================================================== */
 
   assistant: {
-    height: "h-12",
-
+    height: "h-10",
     radius: "rounded-xl",
-
     paddingX: "px-4",
-
     gap: "gap-2",
 
     border: "border border-cyan-500/30",
-
     background: "bg-cyan-500/10",
 
     iconContainer:
-      "flex h-8 w-8 items-center justify-center rounded-full bg-cyan-500/15",
-  },
-
+        "flex h-7 w-7 items-center justify-center rounded-full bg-cyan-500/15",
+},
   /* ========================================================
    * USER PROFILE
    * ====================================================== */
@@ -137,12 +119,10 @@ export const topBarTokens = {
    * ====================================================== */
 
   avatar: {
-    size: "h-12 w-12",
-
+    size: "h-10 w-10",
     border: "border border-slate-700",
-
     radius: "rounded-full",
-  },
+},
 
   /* ========================================================
    * STATUS

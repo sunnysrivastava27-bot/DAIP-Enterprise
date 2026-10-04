@@ -1,0 +1,59 @@
+{
+  "validationStatus": "PASS",
+  "generatedAt": "2026-08-18T08:05:40.409Z",
+  "source": {
+    "roadDataset": "OpenStreetMap via Geofabrik Central Zone",
+    "boundaryDataset": "DataMeet candidate Kanpur city boundary",
+    "officialKdaBoundary": false
+  },
+  "dataset": {
+    "featureCount": 26611,
+    "coordinateCount": 185854,
+    "geometryTypes": {
+      "LineString": 26611,
+      "MultiLineString": 0
+    },
+    "roadClassCounts": {
+      "motorway": 0,
+      "motorway_link": 0,
+      "trunk": 99,
+      "trunk_link": 43,
+      "primary": 44,
+      "primary_link": 8,
+      "secondary": 234,
+      "secondary_link": 32,
+      "tertiary": 693,
+      "tertiary_link": 70,
+      "unclassified": 273,
+      "residential": 22161,
+      "living_street": 179,
+      "service": 2414,
+      "industrial": 0,
+      "road": 0,
+      "unknown": 361
+    },
+    "uniqueOsmIds": 26611
+  },
+  "spatialExtent": {
+    "west": 80.1948632,
+    "south": 26.3091245,
+    "east": 80.478164,
+    "north": 26.5452773
+  },
+  "checks": {
+    "validGeoJSONType": true,
+    "featuresArray": true,
+    "featureCountAboveMinimum": true,
+    "supportedGeometryTypes": true,
+    "emptyGeometries": 0,
+    "invalidCoordinates": 0,
+    "duplicateOsmIds": 0,
+    "missingOsmIds": 0,
+    "geographicSanity": true
+  },
+  "interpretation": {
+    "datasetReadyFor3D": true,
+    "officialKdaBoundaryConfirmed": false,
+    "notes": "Road dataset passed structural and geographic validation. It can proceed to the 3D visualization stage, while the boundary remains a candidate city boundary rather than an officially confirmed KDA authority boundary."
+  }
+}

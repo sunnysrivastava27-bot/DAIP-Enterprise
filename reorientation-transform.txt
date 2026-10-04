@@ -1,0 +1,57 @@
+			}
+
+			if ( ! recenter ) {
+
+				tiles.group.position.setScalar( 0 );
+
+			}
+
+			tiles.removeEventListener( 'load-root-tileset', this._callback );
+
+		};
+
+		tiles.addEventListener( 'load-root-tileset', this._callback );
+
+		if ( tiles.root ) {
+
+			this._callback();
+
+		}
+
+	}
+
+	/**
+	 * Centers the tileset such that the given coordinates are positioned at the origin
+	 * with X facing west and Z facing north.
+	 * @param {number} lat Latitude in radians.
+	 * @param {number} lon Longitude in radians.
+	 * @param {number} [height=0] Height in metres above the ellipsoid surface.
+	 * @param {number} [azimuth=0] Azimuth rotation in radians.
+	 * @param {number} [elevation=0] Elevation rotation in radians.
+	 * @param {number} [roll=0] Roll rotation in radians.
+	 */
+	transformLatLonHeightToOrigin( lat, lon, height = 0, azimuth = 0, elevation = 0, roll = 0 ) {
+
+		const { group, ellipsoid } = this.tiles;
+
+		// get ENU orientation (Z facing north and X facing west) and position
+		ellipsoid.getObjectFrame( lat, lon, height, azimuth, elevation, roll, group.matrix, OBJECT_FRAME );
+
+		// adjust the group matrix
+		group.matrix.invert().decompose( group.position, group.quaternion, group.scale );
+		group.updateMatrixWorld();
+
+	}
+
+	dispose() {
+
+		const { group } = this.tiles;
+		group.position.setScalar( 0 );
+		group.quaternion.identity();
+		group.scale.set( 1, 1, 1 );
+
+		this.tiles.removeEventListener( 'load-root-tileset', this._callback );
+
+	}
+
+}

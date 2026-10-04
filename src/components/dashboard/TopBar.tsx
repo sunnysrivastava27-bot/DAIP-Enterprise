@@ -49,7 +49,7 @@ const TopBar: React.FC = () => {
     >
       {/* LEFT */}
 
-      <div className="flex shrink-0">
+      <div className="flex min-w-0">
         <TopBarLeft
           formattedDate={formattedDate}
           formattedTime={formattedTime}
@@ -60,13 +60,13 @@ const TopBar: React.FC = () => {
 
       {/* CENTER */}
 
-      <div className="flex min-w-0 flex-1 items-center justify-center px-6">
+      <div className="flex flex-1 min-w-0 items-center px-6">
         <TopBarCenter />
       </div>
 
       {/* RIGHT */}
 
-      <div className="flex shrink-0 justify-end">
+      <div className="flex min-w-0 justify-end">
         <TopBarRight
           notificationCount={8}
           userName="Rajesh Kumar"

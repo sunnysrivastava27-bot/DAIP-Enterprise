@@ -18,7 +18,7 @@ export default function Sidebar() {
                 bg-[#050A13]
             "
         >
-            <div className="flex h-full flex-col">
+            <div className="flex h-full min-h-0 flex-col">
                 <SidebarHeader />
 
                 <SidebarNavigation

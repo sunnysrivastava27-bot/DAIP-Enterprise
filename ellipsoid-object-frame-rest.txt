@@ -1,0 +1,35 @@
+		// Add in the orientation adjustment for objects and cameras so "forward" and "up" are oriented
+		// correctly
+		if ( frame === CAMERA_FRAME ) {
+
+			_euler.set( Math.PI / 2, 0, 0, 'XYZ' );
+			_matrix2.makeRotationFromEuler( _euler );
+			target.multiply( _matrix2 );
+
+		} else if ( frame === OBJECT_FRAME ) {
+
+			_euler.set( - Math.PI / 2, 0, Math.PI, 'XYZ' );
+			_matrix2.makeRotationFromEuler( _euler );
+			target.multiply( _matrix2 );
+
+		}
+
+		return target;
+
+	}
+
+	/**
+	 * Extracts geographic position and orientation (lat, lon, height, azimuth, elevation, roll)
+	 * from the given object/camera frame matrix. The inverse of `getObjectFrame`. Writes the
+	 * result into `target` and returns it.
+	 * @param {Matrix4} matrix
+	 * @param {Object} target
+	 * @param {Frames} [frame=OBJECT_FRAME]
+	 * @returns {{ lat: number, lon: number, height: number, azimuth: number, elevation: number, roll: number }}
+	 */
+	getCartographicFromObjectFrame( matrix, target, frame = OBJECT_FRAME ) {
+
+		// if working with a frame that is not the ENU_FRAME then multiply in the
+		// offset for a camera or object so "forward" and "up" are oriented correct
+		if ( frame === CAMERA_FRAME ) {
+

@@ -4,8 +4,12 @@ import {
   CalendarDays,
   Clock3,
   Mic,
-  ArrowRight,
+  ChevronRight,
 } from "lucide-react";
+
+/* ============================================================
+   LIVE FEEDS
+============================================================ */
 
 const liveFeeds = [
   {
@@ -25,6 +29,10 @@ const liveFeeds = [
   },
 ];
 
+/* ============================================================
+   MEETINGS
+============================================================ */
+
 const meetings = [
   {
     time: "10:30 AM",
@@ -40,163 +48,470 @@ const meetings = [
   },
 ];
 
+/* ============================================================
+   COMPONENT
+============================================================ */
+
 const RightRail: React.FC = () => {
   return (
-    <aside className="flex h-full w-[320px] flex-col border-l border-slate-800/70 bg-[#050A13]">
 
-      {/* =======================================================
+    <aside
+      className="
+        flex
+        flex-col
+        h-full
+        gap-5
+      "
+    >
+
+      {/* ======================================================
           LIVE FEEDS
-      ======================================================== */}
+      ======================================================= */}
 
-      <section className="border-b border-slate-800/70 p-5">
+      <section
+        className="
+          rounded-3xl
+          border
+          border-slate-800/70
+          bg-[#09111D]
+          overflow-hidden
+        "
+      >
 
-        <div className="mb-5 flex items-center gap-2">
+        <div
+          className="
+            flex
+            items-center
+            justify-between
+            border-b
+            border-slate-800/70
+            px-5
+            py-4
+          "
+        >
 
-          <Activity
-            size={18}
-            className="text-cyan-400"
-          />
+          <div className="flex items-center gap-3">
 
-          <h3 className="text-sm font-semibold tracking-wide text-white">
-            Live Feeds
-          </h3>
+            <Activity
+              size={18}
+              className="text-cyan-400"
+            />
+
+            <div>
+
+              <p
+                className="
+                  text-[11px]
+                  uppercase
+                  tracking-[0.22em]
+                  text-cyan-400
+                "
+              >
+                Live Operations
+              </p>
+
+              <h3
+                className="
+                  mt-1
+                  text-base
+                  font-semibold
+                  text-white
+                "
+              >
+                Live Feeds
+              </h3>
+
+            </div>
+
+          </div>
+
+          <button
+            className="
+              text-xs
+              font-medium
+              text-cyan-400
+              hover:text-cyan-300
+            "
+          >
+            View All
+          </button>
 
         </div>
 
-        <div className="space-y-4">
+        <div className="p-4 space-y-3">
+		          {liveFeeds.map((feed) => (
 
-          {liveFeeds.map((feed) => (
             <div
               key={feed.title}
-              className="rounded-xl border border-slate-700 bg-[#0B1220] p-4"
+              className="
+                group
+                rounded-2xl
+                border
+                border-slate-800/70
+                bg-[#0D1726]
+                p-4
+                transition-all
+                duration-300
+                hover:border-cyan-500/40
+                hover:bg-[#111E30]
+              "
             >
+
               <div className="flex items-start gap-3">
 
-                <span
-                  className={`mt-1 h-2.5 w-2.5 rounded-full ${feed.color}`}
+                <div
+                  className={`
+                    mt-1
+                    h-2.5
+                    w-2.5
+                    rounded-full
+                    ${feed.color}
+                  `}
                 />
 
-                <div>
+                <div className="min-w-0 flex-1">
 
-                  <p className="text-sm font-medium text-white">
-                    {feed.title}
-                  </p>
+                  <div className="flex items-start justify-between gap-3">
 
-                  <p className="mt-1 text-xs text-slate-400">
-                    {feed.status}
-                  </p>
+                    <div>
+
+                      <h4
+                        className="
+                          text-sm
+                          font-semibold
+                          text-white
+                        "
+                      >
+                        {feed.title}
+                      </h4>
+
+                      <p
+                        className="
+                          mt-1
+                          text-xs
+                          leading-5
+                          text-slate-400
+                        "
+                      >
+                        {feed.status}
+                      </p>
+
+                    </div>
+
+                    <ChevronRight
+                      size={15}
+                      className="
+                        mt-1
+                        text-slate-500
+                        transition
+                        group-hover:text-cyan-400
+                      "
+                    />
+
+                  </div>
 
                 </div>
 
               </div>
+
             </div>
+
           ))}
 
         </div>
 
       </section>
 
-      {/* =======================================================
+      {/* ======================================================
           UPCOMING MEETINGS
-      ======================================================== */}
+      ======================================================= */}
 
-      <section className="border-b border-slate-800/70 p-5">
+      <section
+        className="
+          rounded-3xl
+          border
+          border-slate-800/70
+          bg-[#09111D]
+          overflow-hidden
+        "
+      >
 
-        <div className="mb-5 flex items-center gap-2">
+        <div
+          className="
+            flex
+            items-center
+            border-b
+            border-slate-800/70
+            px-5
+            py-4
+          "
+        >
 
           <CalendarDays
             size={18}
             className="text-cyan-400"
           />
 
-          <h3 className="text-sm font-semibold text-white">
-            Upcoming Meetings
-          </h3>
+          <div className="ml-3">
+
+            <p
+              className="
+                text-[11px]
+                uppercase
+                tracking-[0.22em]
+                text-cyan-400
+              "
+            >
+              Schedule
+            </p>
+
+            <h3
+              className="
+                mt-1
+                text-base
+                font-semibold
+                text-white
+              "
+            >
+              Upcoming Meetings
+            </h3>
+
+          </div>
 
         </div>
 
-        <div className="space-y-3">
+        <div className="p-4 space-y-3">
+		          {meetings.map((meeting) => (
 
-          {meetings.map((meeting) => (
             <div
               key={meeting.time}
-              className="rounded-xl border border-slate-700 bg-[#0B1220] p-4"
+              className="
+                group
+                rounded-2xl
+                border
+                border-slate-800/70
+                bg-[#0D1726]
+                p-4
+                transition-all
+                duration-300
+                hover:border-cyan-500/40
+                hover:bg-[#111E30]
+              "
             >
-              <div className="flex items-center gap-3">
 
-                <Clock3
-                  size={16}
-                  className="text-cyan-400"
-                />
+              <div className="flex items-start justify-between">
 
-                <div>
+                <div className="flex gap-3">
 
-                  <p className="text-sm font-semibold text-white">
-                    {meeting.time}
-                  </p>
+                  <Clock3
+                    size={16}
+                    className="mt-1 text-cyan-400"
+                  />
 
-                  <p className="text-xs text-slate-400">
-                    {meeting.title}
-                  </p>
+                  <div>
+
+                    <p
+                      className="
+                        text-sm
+                        font-semibold
+                        text-white
+                      "
+                    >
+                      {meeting.time}
+                    </p>
+
+                    <p
+                      className="
+                        mt-1
+                        text-xs
+                        leading-5
+                        text-slate-400
+                      "
+                    >
+                      {meeting.title}
+                    </p>
+
+                  </div>
 
                 </div>
 
+                <ChevronRight
+                  size={15}
+                  className="
+                    mt-1
+                    text-slate-500
+                    transition
+                    group-hover:text-cyan-400
+                  "
+                />
+
               </div>
+
             </div>
+
           ))}
 
         </div>
 
       </section>
 
-      {/* =======================================================
+      {/* ======================================================
           AI VOICE COMMAND
-      ======================================================== */}
+      ======================================================= */}
 
-      <section className="flex flex-1 flex-col p-5">
+      <section
+        className="
+          rounded-3xl
+          border
+          border-slate-800/70
+          bg-[#09111D]
+          overflow-hidden
+        "
+      >
 
-        <div className="mb-5 flex items-center gap-2">
+        <div
+          className="
+            flex
+            items-center
+            border-b
+            border-slate-800/70
+            px-5
+            py-4
+          "
+        >
 
           <Mic
             size={18}
             className="text-cyan-400"
           />
 
-          <h3 className="text-sm font-semibold text-white">
-            AI Voice Command
-          </h3>
+          <div className="ml-3">
 
-        </div>
+            <p
+              className="
+                text-[11px]
+                uppercase
+                tracking-[0.22em]
+                text-cyan-400
+              "
+            >
+              Executive Assistant
+            </p>
 
-        <div className="rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-cyan-500/10 to-blue-500/5 p-5">
-
-          <div className="mb-5 flex justify-center">
-
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-cyan-500/15">
-
-              <Mic
-                size={26}
-                className="text-cyan-400"
-              />
-
-            </div>
+            <h3
+              className="
+                mt-1
+                text-base
+                font-semibold
+                text-white
+              "
+            >
+              AI Voice Command
+            </h3>
 
           </div>
 
-          <p className="text-center text-sm text-slate-300">
-            Ask DAIP anything...
+        </div>
+
+        <div
+          className="
+            p-6
+            flex
+            flex-col
+            items-center
+          "
+        >
+		          {/* Voice Orb */}
+
+          <div
+            className="
+              relative
+              flex
+              h-24
+              w-24
+              items-center
+              justify-center
+              rounded-full
+              border
+              border-cyan-500/30
+              bg-cyan-500/10
+            "
+          >
+
+            <div
+              className="
+                absolute
+                inset-2
+                rounded-full
+                border
+                border-cyan-400/20
+              "
+            />
+
+            <Mic
+              size={34}
+              className="relative z-10 text-cyan-400"
+            />
+
+          </div>
+
+          <p
+            className="
+              mt-6
+              text-sm
+              font-semibold
+              text-white
+            "
+          >
+            Ask DAIP Anything
           </p>
 
-          <button className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-cyan-500 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400">
+          <p
+            className="
+              mt-2
+              text-center
+              text-xs
+              leading-5
+              text-slate-400
+            "
+          >
+            Voice assistant is ready to execute
+            executive commands.
+          </p>
 
-            Start Listening
+          <button
+            className="
+              mt-6
+              flex
+              items-center
+              gap-2
+              rounded-xl
+              bg-cyan-500
+              px-5
+              py-3
+              text-sm
+              font-semibold
+              text-slate-950
+              transition
+              hover:bg-cyan-400
+            "
+          >
 
-            <ArrowRight size={16} />
+            Activate Voice
+
+            <ChevronRight size={16} />
 
           </button>
 
-          <p className="mt-4 text-center text-xs text-slate-500">
-            Press "/" to activate voice assistant
+          <p
+            className="
+              mt-4
+              text-center
+              text-[11px]
+              text-slate-500
+            "
+          >
+            Press "/" anywhere inside DAIP
           </p>
 
         </div>
@@ -204,7 +519,10 @@ const RightRail: React.FC = () => {
       </section>
 
     </aside>
+
   );
 };
 
 export default RightRail;
+
+		

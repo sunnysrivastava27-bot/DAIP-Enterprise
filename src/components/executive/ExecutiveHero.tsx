@@ -32,37 +32,52 @@ const ExecutiveHero: React.FC = () => {
         bg-[#0B1220]
       "
     >
-      <div
-        className="
-          grid
-          h-[380px]
-          grid-cols-[380px_1fr_320px]
-          items-stretch
-        "
-      >
-        {/* ================= LEFT PANEL ================= */}
+     <div
+  className="
+    grid
+    grid-cols-[1.35fr_2.4fr_1.1fr]
+    gap-0
+    items-stretch
+    h-[430px]
+  "
+>
+        {/* ======================================================
+            LEFT PANEL
+        ======================================================= */}
 
         <div
-          className="
-            overflow-hidden
-            border-r
-            border-slate-800/40
-            px-8
-            py-8
-          "
-        >
+  className="
+    relative
+    min-w-0
+    overflow-hidden
+    px-6
+    py-6
+  "
+>
           <HeroGreeting
             data={heroGreetingData}
             onStartBriefing={() => {}}
           />
         </div>
 
-        {/* ================= CENTER PANEL ================= */}
+        {/* ======================================================
+            DIGITAL TWIN
+        ======================================================= */}
 
         <div
           className="
             relative
+            min-w-0
             overflow-hidden
+
+            border-b
+            border-slate-800/70
+
+            xl:border-b-0
+            xl:border-r
+
+            h-full
+
             px-6
             py-6
           "
@@ -70,19 +85,22 @@ const ExecutiveHero: React.FC = () => {
           <DigitalTwin />
         </div>
 
-        {/* ================= RIGHT PANEL ================= */}
+        {/* ======================================================
+            MORNING BRIEF
+        ======================================================= */}
 
-        <div
-          className="
-            overflow-hidden
-            border-l
-            border-slate-800/40
-            px-6
-            py-6
-          "
-        >
+       <div
+  className="
+    relative
+    min-w-0
+    overflow-hidden
+    px-5
+    py-6
+  "
+>
           <MorningBrief />
         </div>
+        
       </div>
     </motion.section>
   );

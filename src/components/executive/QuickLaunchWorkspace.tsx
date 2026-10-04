@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
+  type LucideIcon,
   FolderOpen,
   Building2,
   Users,
@@ -15,7 +16,7 @@ import {
 interface WorkspaceAction {
   title: string;
   subtitle: string;
-  icon: React.ElementType;
+  icon: LucideIcon;
   color: string;
   bg: string;
 }

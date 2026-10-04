@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+scripts/gis/source/central-zone-260817-free.shp.zip
+src (2).zip
+scripts/gis/source/central-zone-260817-free.shp.zip
+scripts/gis/source/northern-zone-260817-free.shp.zip
+src/components/executive/v3/digital-twin.zip
+src/components/executive/v3/digital-twin/data/kanpur/raw/kanpur-buildings.geojson

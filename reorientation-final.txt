@@ -1,0 +1,27 @@
+	 * @param {number} [roll=0] Roll rotation in radians.
+	 */
+	transformLatLonHeightToOrigin( lat, lon, height = 0, azimuth = 0, elevation = 0, roll = 0 ) {
+
+		const { group, ellipsoid } = this.tiles;
+
+		// get ENU orientation (Z facing north and X facing west) and position
+		ellipsoid.getObjectFrame( lat, lon, height, azimuth, elevation, roll, group.matrix, OBJECT_FRAME );
+
+		// adjust the group matrix
+		group.matrix.invert().decompose( group.position, group.quaternion, group.scale );
+		group.updateMatrixWorld();
+
+	}
+
+	dispose() {
+
+		const { group } = this.tiles;
+		group.position.setScalar( 0 );
+		group.quaternion.identity();
+		group.scale.set( 1, 1, 1 );
+
+		this.tiles.removeEventListener( 'load-root-tileset', this._callback );
+
+	}
+
+}

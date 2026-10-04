@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
+  type LucideIcon,
   Activity,
   Building2,
   BriefcaseBusiness,
@@ -13,7 +14,7 @@ interface SnapshotMetric {
   title: string;
   value: string;
   subtitle: string;
-  icon: React.ElementType;
+ icon: LucideIcon;
   color: string;
   bg: string;
 }

@@ -148,7 +148,7 @@ const TopBarRight: React.FC<TopBarRightProps> = ({
         <div
           className="
             flex
-            min-w-[130px]
+            min-w-0
             flex-col
             text-left
           "
@@ -167,11 +167,11 @@ const TopBarRight: React.FC<TopBarRightProps> = ({
 
           <span
             className="
-              mt-1
-              whitespace-nowrap
-              text-[12px]
-              text-slate-400
-            "
+text-[14px]
+font-medium
+truncate
+text-white
+"
           >
             {designation}
           </span>
@@ -179,7 +179,12 @@ const TopBarRight: React.FC<TopBarRightProps> = ({
 
         <ChevronDown
           size={18}
-          className="text-slate-500"
+          className="
+text-[14px]
+font-medium
+truncate
+text-white
+"
         />
       </button>
     </div>

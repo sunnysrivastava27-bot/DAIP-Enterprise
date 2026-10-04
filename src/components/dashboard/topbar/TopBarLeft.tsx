@@ -17,10 +17,10 @@ const TopBarLeft: React.FC<TopBarLeftProps> = ({
   return (
     <div
       className="
-        flex
-        items-center
-        shrink-0
-      "
+flex
+items-center
+min-w-0
+"
     >
       {/* ======================================================
           AUTHORITY
@@ -32,14 +32,14 @@ const TopBarLeft: React.FC<TopBarLeftProps> = ({
           flex-col
           justify-center
           whitespace-nowrap
-          pr-10
+          pr-8
         "
       >
         <span
           className="
-            text-[13px]
+            text-[12px]
             font-medium
-            tracking-[0.08em]
+            tracking-[0.06em]
             uppercase
             text-white
             leading-none
@@ -50,7 +50,7 @@ const TopBarLeft: React.FC<TopBarLeftProps> = ({
 
         <div
           className="
-            mt-2
+            mt-1
             flex
             items-center
             gap-2
@@ -60,7 +60,7 @@ const TopBarLeft: React.FC<TopBarLeftProps> = ({
 
           <span
             className="
-              text-[12px]
+              text-[11px]
               text-emerald-400
             "
           >
@@ -77,11 +77,11 @@ const TopBarLeft: React.FC<TopBarLeftProps> = ({
         className="
           flex
           items-center
-          pr-8
+          pr-6
         "
       >
         <CalendarDays
-          size={18}
+          size={16}
           className="mr-3 text-cyan-400"
         />
 
@@ -89,7 +89,7 @@ const TopBarLeft: React.FC<TopBarLeftProps> = ({
           <div
             className="
               whitespace-nowrap
-              text-[14px]
+              text-[13px]
               text-white
             "
           >
@@ -98,7 +98,7 @@ const TopBarLeft: React.FC<TopBarLeftProps> = ({
 
           <div
             className="
-              mt-1
+              mt-0.5
               text-[12px]
               text-slate-400
             "
@@ -119,14 +119,14 @@ const TopBarLeft: React.FC<TopBarLeftProps> = ({
         "
       >
         <CloudSun
-          size={19}
+          size={17}
           className="mr-3 text-amber-400"
         />
 
         <div className="leading-tight">
           <div
             className="
-              text-[14px]
+              text-[13px]
               text-white
             "
           >
@@ -135,7 +135,7 @@ const TopBarLeft: React.FC<TopBarLeftProps> = ({
 
           <div
             className="
-              mt-1
+              mt-0.5
               text-[12px]
               text-slate-400
             "

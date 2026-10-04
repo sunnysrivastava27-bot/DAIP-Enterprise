@@ -10,8 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-three/drei": "^10.7.8",
+    "@react-three/fiber": "^9.7.0",
     "@tailwindcss/vite": "^4.3.2",
+    "@turf/turf": "^7.4.0",
     "@types/leaflet": "^1.9.21",
+    "3d-tiles-renderer": "^0.5.2",
     "clsx": "^2.1.1",
     "framer-motion": "^12.42.2",
     "leaflet": "^1.9.4",
@@ -20,7 +24,12 @@
     "react-dom": "^19.2.7",
     "react-leaflet": "^5.0.0",
     "react-router-dom": "^7.18.1",
-    "tailwindcss": "^4.3.2"
+    "shapefile": "^0.6.6",
+    "shpjs": "^6.2.0",
+    "stream-json": "^3.5.0",
+    "tailwindcss": "^4.3.2",
+    "three": "^0.185.1",
+    "unzipper": "^0.12.5"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

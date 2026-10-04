@@ -8,8 +8,7 @@ import {
     Layers3,
     Map,
     ClipboardCheck,
-    BarChart3,
-    ShieldCheck,
+    
 } from "lucide-react";
 
 import type { SidebarSection } from "./types";
@@ -72,16 +71,7 @@ export const SIDEBAR_SECTIONS: SidebarSection[] = [
                 title: "Meetings & Approvals",
                 icon: ClipboardCheck,
             },
-            {
-                id: "reports",
-                title: "Reports & Analytics",
-                icon: BarChart3,
-            },
-            {
-                id: "administration",
-                title: "Administration",
-                icon: ShieldCheck,
-            },
+            
         ],
     },
 ];

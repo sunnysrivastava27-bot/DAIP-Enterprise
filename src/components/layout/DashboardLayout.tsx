@@ -5,104 +5,122 @@ import Sidebar from "../dashboard/sidebar/Sidebar";
 import TopBar from "../dashboard/TopBar";
 
 interface DashboardLayoutProps {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }
 
-const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
-  return (
-    <div className="flex h-screen w-full overflow-hidden bg-[#060B14] text-white">
+/* ==========================================================
+   DAIP ENTERPRISE V3
+   APPLICATION LAYOUT
+========================================================== */
 
-      {/* ==========================================================
-          LEFT SIDEBAR
-      ========================================================== */}
+const SIDEBAR_WIDTH = 220;
 
-      <aside
-        className="
-          hidden
-          xl:flex
-          h-full
-          w-[240px]
-          flex-shrink-0
-          border-r
-          border-slate-800/70
-          bg-[#050A13]
-        "
-      >
-        <Sidebar />
-      </aside>
 
-      {/* ==========================================================
-          MAIN APPLICATION
-      ========================================================== */}
+const DashboardLayout: React.FC<DashboardLayoutProps> = ({
+    children,
+}) => {
 
-      <section
-        className="
-          flex
-          flex-1
-          min-w-0
-          min-h-0
-          flex-col
-          overflow-hidden
-        "
-      >
+    return (
 
-        {/* ======================================================
-            TOP HEADER
-        ====================================================== */}
-
-        <header
-          className="
-            flex-shrink-0
-            border-b
-            border-slate-800/60
-            bg-[#060B14]
-            px-6
-          "
-        >
-          <div
+        <div
             className="
-              mx-auto
-              w-full
-              max-w-[1800px]
+                flex
+                h-screen
+                w-screen
+                overflow-hidden
+                bg-[#060B14]
+                text-white
             "
-          >
-            <TopBar />
-          </div>
-        </header>
-
-        {/* ======================================================
-            WORKSPACE
-        ====================================================== */}
-
-        <motion.main
-          initial={{ opacity: 0, y: 6 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.30,
-            ease: "easeOut",
-          }}
-          className="
-            flex-1
-            overflow-auto
-          "
         >
-          <div
-            className="
-              mx-auto
-              w-full
-              max-w-[1800px]
-              px-6
-              py-5
-            "
-          >
-            {children}
-          </div>
-        </motion.main>
 
-      </section>
+            {/* ==========================================
+                SIDEBAR
+            =========================================== */}
 
-    </div>
-  );
+            <aside
+  className="
+    hidden
+    xl:flex
+    flex-shrink-0
+    border-r
+    border-slate-800/70
+    bg-[#050A13]
+  "
+  style={{
+      width: SIDEBAR_WIDTH,
+  }}
+>
+                <Sidebar />
+            </aside>
+
+            {/* ==========================================
+                APPLICATION
+            =========================================== */}
+
+            <section
+                className="
+                    flex
+                    flex-1
+                    min-w-0
+                    min-h-0
+                    flex-col
+                    overflow-hidden
+                "
+            >
+
+                {/* ======================================
+                    TOP BAR
+                ======================================= */}
+
+               <div className="flex-shrink-0">
+    <TopBar />
+</div>
+
+                {/* ======================================
+                    WORKSPACE
+                ======================================= */}
+
+                <motion.main
+                    initial={{
+                        opacity: 0,
+                        y: 6,
+                    }}
+                    animate={{
+                        opacity: 1,
+                        y: 0,
+                    }}
+                    transition={{
+                        duration: 0.30,
+                        ease: "easeOut",
+                    }}
+                    className="
+                        flex-1
+                        min-h-0
+                        min-w-0
+                        overflow-hidden
+                    "
+                >
+				                    <div
+                        className="
+                            h-full
+                            min-h-0
+                            w-full
+                            overflow-hidden
+                            px-2
+                            py-1
+                        "
+                    >
+                        {children}
+                    </div>
+
+                </motion.main>
+
+            </section>
+
+        </div>
+
+    );
+
 };
 
 export default DashboardLayout;

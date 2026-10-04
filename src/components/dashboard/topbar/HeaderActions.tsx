@@ -1,7 +1,7 @@
 import React from "react";
 import { Bell, Bot, ChevronDown } from "lucide-react";
 import type { HeaderActionsProps } from "./types";
-import topBarTokens from "../../../design-tokens/topbar.tokens";
+
 
 const HeaderActions: React.FC<HeaderActionsProps> = ({
   notificationCount = 8,

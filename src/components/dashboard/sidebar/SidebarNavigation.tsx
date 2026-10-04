@@ -9,7 +9,16 @@ export default function SidebarNavigation({
     onMenuSelect,
 }: SidebarNavigationProps) {
     return (
-        <nav className="flex-1 overflow-y-auto px-3 py-2">
+        <nav
+    className="
+        flex-1
+        min-h-0
+        overflow-y-auto
+        overflow-x-hidden
+        px-3
+        py-2
+    "
+>
             <div className="space-y-6">
                 {SIDEBAR_SECTIONS.map((section) => (
                     <div key={section.id}>

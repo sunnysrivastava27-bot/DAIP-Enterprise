@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import {
+  type LucideIcon,
   Building2,
   IndianRupee,
   FolderKanban,
@@ -13,7 +14,7 @@ interface StatItem {
   title: string;
   value: string;
   change: string;
-  icon: React.ElementType;
+  icon: LucideIcon;
   color: ColorKey;
 }
 
